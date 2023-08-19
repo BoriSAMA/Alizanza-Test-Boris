@@ -1,0 +1,26 @@
+.form-container {
+    max-width: 46em;
+    background: rgb(169 201 216);
+    padding: 2em 6em 1em 2em;
+}
+
+label {
+    font-size: 1.3rem;
+    color: rgb(108 128 135);
+    font-weight: 500;
+}
+
+input, button{
+    font-size: 1.2rem;
+}
+
+.btn-ok {
+    max-width: 80px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.row {
+    margin-bottom: 1em;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav class="sidebar-area" #sidenav [opened]="true" [mode]="'side'">
+        <div class="sidebar-logo">
+            <a [routerLink]="['/main/clientes']">
+                <div class="logo-sign inline-block">
+                    <img src="assets/alianza_logo.png" width="180">
+                </div>
+            </a>
+        </div>
+        <mat-nav-list>
+            <bor-menu-item></bor-menu-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="mat-drawer-content mat-sidenav-content">
+        <div class="gene-base-container" #scrollContainer>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
