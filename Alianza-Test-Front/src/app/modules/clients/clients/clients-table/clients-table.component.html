@@ -1,0 +1,48 @@
+<!-- <div *ngIf="tableContent && tableContent.length > 0"> -->
+<div *ngIf="true">
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let header of tableHeaders">
+                    <span *ngIf="header.type == 'text'" class="">{{header.description}}</span>
+                    <mat-icon *ngIf="header.type == 'icon'" aria-hidden="false" fontIcon="{{header.description}}"
+                        style="color: rgb(78 82 84);">{{header.description}}
+                    </mat-icon>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of tableContent">
+                <td>{{client.sharedKey}}</td>
+                <td>{{client.bussinessId}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.phone}}</td>
+                <td>{{client.createdDate}}</td>
+                <td>
+                    <a disabled="true">
+                        <mat-icon aria-hidden="false" fontIcon="edit" style="color: black;">edit</mat-icon>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only"></span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only"></span>
+                </a>
+            </li>
+        </ul>
+    </nav> -->
+</div>

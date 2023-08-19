@@ -1,0 +1,12 @@
+<div class="menu-items-container">
+    <div *ngFor="let navMenuItem of navMenuItems">
+        <div class="menu-category">
+            <img class="category-icon" src="{{navMenuItem.icon}}" alt="">
+            <h1 class="category-title bor-h1-title">{{navMenuItem.name}}</h1>
+        </div>
+        <div class="menu-subcategories">
+            <a mat-list-item class="subcategory-title " *ngFor="let menuItem of navMenuItem.children"
+                routerLink="{{menuItem.link}}" disabled="{{menuItem.isDisabled}}">{{menuItem.name}}</a>
+        </div>
+    </div>
+</div>
