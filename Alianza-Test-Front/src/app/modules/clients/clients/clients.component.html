@@ -1,0 +1,60 @@
+<div class="clients-operations">
+    <div class="clients-operations-buttons">
+        <button mat-flat-button class="bor-btn-primary" color="primary" (click)="displayModal = true">
+            <mat-icon aria-hidden="false" fontIcon="add" style="color: rgb(78 82 84);">add</mat-icon>
+            <span>New</span>
+        </button>
+        <button mat-flat-button class="bor-btn-primary" color="primary">
+            <mat-icon aria-hidden="false" fontIcon="download" style="color: rgb(78 82 84);">download</mat-icon>
+            <span>Export</span>
+        </button>
+    </div>
+    <div class="clients-operations-filter">
+        <div>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter Shared Key" aria-label="Enter Shared Keye"
+                    [formControl]="sharedKeyControl">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" (click)="getBysharedKey()">Search</button>
+                </div>
+            </div>
+            <mat-error *ngIf="sharedKeyControl.hasError('pattern')">
+                Only letters are allowed.
+            </mat-error>
+        </div>
+        <div class="mx-5">
+            <button mat-flat-button class="bor-btn-primary" color="primary"
+                (click)="isAdvancedSearch = !isAdvancedSearch">
+                Advanced Search
+            </button>
+        </div>
+    </div>
+    <div class="clients-advanced-search" *ngIf="isAdvancedSearch">
+        <div class="advanced-search-container">
+            <bor-clients-form [isFormValidation]="false" (formEmitter)="getFilterPage($event)"></bor-clients-form>
+        </div>
+    </div>
+</div>
+<div class="clients-table mt-4">
+    <h1 class="bor-h1-title">Clients</h1>
+    <div class="table">
+        <bor-clients-table [tableContent]="clients"></bor-clients-table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" role="dialog" [ngStyle]="{'display': (displayModal) ? 'block' : 'none'}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Create New Client</h2>
+                <button mat-flat-button color="secondary" type="button" class="close" (click)="displayModal = false">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <bor-clients-form [isFormValidation]="true" (formEmitter)="addClient($event)"></bor-clients-form>
+            </div>
+        </div>
+    </div>
+</div>

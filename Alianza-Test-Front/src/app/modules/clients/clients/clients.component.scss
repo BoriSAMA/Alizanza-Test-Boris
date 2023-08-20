@@ -1,0 +1,65 @@
+.clients-operations {
+    padding: 7em 4em 1em 4em;
+}
+
+.clients-operations-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.clients-operations-buttons button{
+    height: 3.5em;
+    min-width: 120px;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    font-size: 1rem;
+}
+
+.bor-btn-primary span{
+    margin-left: 0.3em;
+}
+
+.clients-operations-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.clients-operations-filter input, button{
+    font-size: 1.2rem;
+}
+
+.form-control {
+    min-width: 300px !important;
+}
+
+.clients-table {
+    padding: 0px 4em;
+}
+
+.input-group {
+    flex-wrap: nowrap !important;
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h2, .close {
+    color: rgb(108 128 135);
+	margin: 0px !important;
+    background: #a9c9d8 !important;
+    font-size: 1.7rem;
+}
+
+.modal-dialog {
+    max-width: 50em !important;
+}
+
+.modal-content {
+    background: #a9c9d8 !important;
+}
+

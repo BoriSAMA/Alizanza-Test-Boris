@@ -1,0 +1,55 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&display=swap');
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$prueba-front-primary: mat-palette($mat-indigo);
+$prueba-front-accent: mat-palette($mat-pink, A200, A100, A400);
+$prueba-front-warn: mat-palette($mat-red);
+$prueba-front-theme: mat-light-theme($prueba-front-primary, $prueba-front-accent, $prueba-front-warn);
+@include angular-material-theme($prueba-front-theme);
+
+$custom-primary: rgb(0 136 204);
+
+.bor-btn-primary {
+	background-color: $custom-primary !important;
+}
+
+.bor-h1-title {
+	color: #25a5c2;
+	font-weight: 550 !important;
+    font-size: 2rem !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
