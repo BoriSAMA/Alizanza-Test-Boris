@@ -37,7 +37,16 @@ export class ClientsFormComponent implements OnInit {
     this._isFormValidation = isFormValidation;
     if (isFormValidation) {
       Object.keys(this.clientsFilterForm.controls).forEach(key => {
-        this.clientsFilterForm.get(key)?.setValidators(Validators.required)
+        if (key != "endDate") {
+          let validators = [Validators.required]
+          if (key == "email") {
+            validators.push(Validators.email);
+          }
+          if (key == "phone") {
+            validators.push(Validators.pattern(/^[0-9]+$/));
+          }
+          this.clientsFilterForm.get(key)?.setValidators(validators);
+        }
       });
       this.clientsFilterForm.updateValueAndValidity();
     }
@@ -77,9 +86,10 @@ export class ClientsFormComponent implements OnInit {
     if (this._isFormValidation && !this.clientsFilterForm.valid) {
       alert("Existen campos mal diligenciados.");
     } else if (!this._isFormValidation && !this.clientsFilterForm.dirty) {
-      alert("Por favor digite al menos un criterio de busqueda.");
+      this.formEmitter.emit(null);
     } else {
       this.formEmitter.emit(this.clientsFilterForm.getRawValue());
+      this.clientsFilterForm.reset()
     }
   }
 

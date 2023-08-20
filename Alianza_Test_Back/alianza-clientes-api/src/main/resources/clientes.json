@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "sharedKey": "jgutierrez",
+    "name": "Juliana Gutierrez",
+    "email": "jgutierrez@gmail.com",
+    "phone": "3200000000",
+    "startDate": "2023-08-18T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 2,
+    "sharedKey": "mmartinez",
+    "name": "Manuel Martinez",
+    "email": "mmartinez@gmail.com",
+    "phone": "3200000000",
+    "startDate": "2023-08-18T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 3,
+    "sharedKey": "aruiz",
+    "name": "Ana Ruiz",
+    "email": "aruiz@gmail.com",
+    "phone": "3200000000",
+    "startDate": "2023-08-18T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 4,
+    "sharedKey": "ogarcia",
+    "name": "Oscar Garcia",
+    "email": "ogarcia@gmail.com",
+    "phone": "3200000000",
+    "startDate": "2023-08-18T00:00:00",
+    "endDate": null
+  }
+]

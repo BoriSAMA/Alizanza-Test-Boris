@@ -14,10 +14,10 @@
         <tbody>
             <tr *ngFor="let client of tableContent">
                 <td>{{client.sharedKey}}</td>
-                <td>{{client.bussinessId}}</td>
+                <td>{{client.name}}</td>
                 <td>{{client.email}}</td>
                 <td>{{client.phone}}</td>
-                <td>{{client.createdDate}}</td>
+                <td>{{client.startDate}}</td>
                 <td>
                     <a disabled="true">
                         <mat-icon aria-hidden="false" fontIcon="edit" style="color: black;">edit</mat-icon>
