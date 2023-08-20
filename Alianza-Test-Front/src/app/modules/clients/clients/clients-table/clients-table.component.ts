@@ -8,7 +8,7 @@ import { Client } from 'src/app/core/model/clients.model';
 })
 export class ClientsTableComponent implements OnInit {
 
-  @Input() tableContent: Array<Client>;
+  @Input() tableContent: Array<Client> = [];
   tableHeaders: Array<any>;
   currentPage: number;
   maxPage: number;
@@ -48,15 +48,6 @@ export class ClientsTableComponent implements OnInit {
         width:"10%"
       }
     ];
-    this.tableContent = [{
-      id: 1,
-      sharedKey: "jgutierrez",
-      bussinessId: "Juliana Gutierrez",
-      email: "jgutierrez@gmail.com",
-      phone: "3200000000",
-      createdDate: "18/08/2023",
-      endDate: null
-    }];
   }
 
 }

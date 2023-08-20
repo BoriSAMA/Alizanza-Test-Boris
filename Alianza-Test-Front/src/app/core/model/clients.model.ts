@@ -1,9 +1,9 @@
 export interface Client {
-	id: number;
+	id?: number;
 	sharedKey: string;
-	bussinessId: string;
+	name: string;
 	email: string;
 	phone: string;
-	createdDate: string;
+	startDate: string;
 	endDate: string | null;
 }

@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Client } from 'src/app/core/model/clients.model';
 import ListResponse from 'src/app/core/model/utils/list-response.model';
 import { ClientService } from 'src/app/core/service/implementations/client.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'bor-clients',
@@ -11,7 +12,7 @@ import { ClientService } from 'src/app/core/service/implementations/client.servi
 })
 export class ClientsComponent implements OnInit {
 
-  displayModal: boolean = true;
+  displayModal: boolean = false;
   sharedKeyControl: FormControl = new FormControl('', Validators.pattern(/^[a-zA-Z]+$/));
   clients: Array<Client> = [];
   isAdvancedSearch: boolean = false;
@@ -21,14 +22,7 @@ export class ClientsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.clientService.getAll().subscribe({
-      next: (res: Array<Client>) => {
-        this.clients = res;
-      },
-      error: (err) => {
-        // alert("Ha ocurrido un error inesperado")
-      }
-    })
+    this.getFilterPage(null);
   }
 
   getFilterPage(filters: any) {
@@ -37,7 +31,7 @@ export class ClientsComponent implements OnInit {
         this.clients = res.data;
       },
       error: (err) => {
-        // alert("Ha ocurrido un error inesperado")
+        alert("Ha ocurrido un error inesperado")
       }
     })
   }
@@ -53,12 +47,24 @@ export class ClientsComponent implements OnInit {
   }
 
   addClient(client: any) {
-    this.clientService.save(client).subscribe({
+    let email: string = client.email;
+    let endDate: string | null = client.endDate ? client.endDate.format("yyyy-MM-DD HH:mm:ss") : null;
+
+    let newClient: Client = {
+      sharedKey: email.split("@")[0],
+      name: client.name,
+      email: email,
+      phone: client.phone,
+      startDate: client.startDate.format("yyyy-MM-DD HH:mm:ss"),
+      endDate: endDate
+    }
+
+    this.clientService.save(newClient).subscribe({
       next: (res: number) => {
-        // alert("Se ha guardado el cliente exitosamente");
+        alert("Se ha guardado el cliente exitosamente");
       },
       error: (err) => {
-        // alert("Ha ocurrido un error inesperado");
+        alert("Ha ocurrido un error inesperado");
       }
     })
     this.displayModal = false;
